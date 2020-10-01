@@ -8,17 +8,20 @@ def p_pair( b_array):
 	#b_array doit être un bytearray
 
 	bit = bytearray()
+	#boucle pour parcourir le tableau
 
 	for i in range(len(b_array)):
+		
 		#convertion en binaire
 		octet = bin(b_array[i])[2:]
+		#effectuons la parite
 
 
 		if (Counter(octet)['1'] % 2 == 0):
 			#le nombre de 1 est pair
 			res.append(int('0' + octet,2))
 		else:
-			#le nombre de 1 est impair
+			#le nombre de 1 est impair on ajoute 1
 			res.append(int('1' + octet,2))
 	return bit
 	
